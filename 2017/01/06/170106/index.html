@@ -100,7 +100,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-39295bef08c8d98d.gif?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-a9b3dfc703cf20b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-0fea5cbb9b2b9b08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-24T07:04:50.672Z">
+<meta property="og:updated_time" content="2017-02-24T09:13:37.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="车大棒浅谈微信红包随机分配猜想">
 <meta name="twitter:description" content="背景 做为一名贫困的月光搬砖党，如果想每天加餐能够多加一块肉。那么就得靠微信红包手速抢红包，所以为了实现梦想。我给自己制定了目标，先抢够一个亿。">
@@ -347,40 +347,8 @@ double max = _leftMoneyPackage.remainMoney / _leftMoneyPackage.remainSize * 2;
 <h1 id="回头解决知乎题目猜想："><a href="#回头解决知乎题目猜想：" class="headerlink" title="回头解决知乎题目猜想："></a>回头解决知乎题目猜想：</h1><p>尝试了一下，题主的问题。我好像能够解决呢！！</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2064035-39295bef08c8d98d.gif?imageMogr2/auto-orient/strip" alt="不明真相的吃瓜群众"></p>
 <p>说实话，还是觉得题主的这个随机分配想法还是很妙的，要是我就想不出来这种随机分配金额的办法来。也要向提问题主低头(* ￣︿￣)！</p>
-<pre><code>function weixin1(money, num) {
-    var arr1 = [];
-    var price = 0;
-    var ha = 0;
-    var random = 0;
-    for(var i = 0; i &lt; num; i++) {
-        if(i == num - 1) {
-            arr1[i] = parseFloat(money.toFixed(2));
-            break;
-        }
-        arr1[i] = parseInt(parseInt(money / (num - i) * 100) / 100 * (parseInt(Math.random() * 100) / 100) * 100) / 100;
-        if(!arr1[i]){
-            arr1[i] = 0.01;
-        }
-        money -= arr1[i];
-        console.log(money);
-    }
-
-    for(var i = 0; i &lt; arr1.length; i++) {    //用来检测最后的总数是否正确
-        price += arr1[i];
-
-    }
-
-    function randomsort(a, b) {
-        return Math.random() &gt; 0.5 ? -1 : 1;
-    }
-
-    arr1.sort(randomsort);          //数组重新随机排列
-    console.log(arr1)
-    console.log(price);
-}
-weixin1(100, 5);
-weixin1(0.5, 5);
-</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/2064035-a9b3dfc703cf20b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="浏览器运行控制结果"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">weixin1</span>(<span class="params">money, num</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> arr1 = [];</div><div class="line">	<span class="keyword">var</span> price = <span class="number">0</span>;</div><div class="line">	<span class="keyword">var</span> ha = <span class="number">0</span>;</div><div class="line">	<span class="keyword">var</span> random = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">		<span class="keyword">if</span>(i == num - <span class="number">1</span>) &#123;</div><div class="line">			arr1[i] = <span class="built_in">parseFloat</span>(money.toFixed(<span class="number">2</span>));</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		arr1[i] = <span class="built_in">parseInt</span>(<span class="built_in">parseInt</span>(money / (num - i) * <span class="number">100</span>) / <span class="number">100</span> * (<span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * <span class="number">100</span>) / <span class="number">100</span>) * <span class="number">100</span>) / <span class="number">100</span>;</div><div class="line">		<span class="keyword">if</span>(!arr1[i])&#123;</div><div class="line">			arr1[i] = <span class="number">0.01</span>;</div><div class="line">		&#125;</div><div class="line">		money -= arr1[i];</div><div class="line">		<span class="built_in">console</span>.log(money);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr1.length; i++) &#123;    <span class="comment">//用来检测最后的总数是否正确</span></div><div class="line">		price += arr1[i];</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">randomsort</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="built_in">Math</span>.random() &gt; <span class="number">0.5</span> ? <span class="number">-1</span> : <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	arr1.sort(randomsort);          <span class="comment">//数组重新随机排列</span></div><div class="line">	<span class="built_in">console</span>.log(arr1)</div><div class="line">	<span class="built_in">console</span>.log(price);</div><div class="line">&#125;</div><div class="line">weixin1(<span class="number">100</span>, <span class="number">5</span>);</div><div class="line">weixin1(<span class="number">0.5</span>, <span class="number">5</span>);</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-a9b3dfc703cf20b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="浏览器运行控制结果"></p>
 <p>以上就是对微信红包随机分配猜想的胡扯篇，欢迎各位大佬们指导并给出相应的意见。（当然红包打赏我就更好了(￣︶￣)，哎呦！我又想起了我那么多可怜测试红包。）</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2064035-0fea5cbb9b2b9b08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="向各位大佬低头"></p>
 
