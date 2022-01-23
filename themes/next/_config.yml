@@ -2,14 +2,14 @@
 # Site Information Settings
 # ---------------------------------------------------------------
 
-description: '吾虽浪迹天涯，却未迷失本心'
-author: '车大棒'
+description: "吾虽浪迹天涯，却未迷失本心"
+author: "车大棒"
 avatar: /images/avatar.jpg
 # Put your favicon.ico into `hexo-site/source/` directory.
 favicon: /images/favicon.png
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "Hexo, Chedabang"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -18,9 +18,6 @@ rss:
 
 # Specify the date when the site was setup
 #since: 2015
-
-
-
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -34,7 +31,6 @@ menu:
   archives: /archives
   tags: /tags
   #commonweal: /404.html
-
 
 # Enable/Disable menu icons.
 # Icon Mapping:
@@ -51,9 +47,6 @@ menu_icons:
   archives: archive
   commonweal: heartbeat
 
-
-
-
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -62,8 +55,6 @@ menu_icons:
 scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-
-
 
 # ---------------------------------------------------------------
 # Font Settings
@@ -110,23 +101,18 @@ font:
     external: true
     family:
 
-
-
-
 # ---------------------------------------------------------------
 # Sidebar Settings
 # ---------------------------------------------------------------
-
 
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 #social:
-  #LinkLabel: Link
+#LinkLabel: Link
 social:
-    GItHub: https://github.com/CheDabang
-    '简书': http://www.jianshu.com/u/025df949ff39
-
+  GItHub: https://github.com/CheDabang
+  "简书": http://www.jianshu.com/u/025df949ff39
 
 # Social Links Icons
 # Icon Mapping:
@@ -141,12 +127,10 @@ social_icons:
   Twitter: twitter
   Weibo: weibo
 
-
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
 #avatar:
-
 
 # Table Of Contents in the Sidebar
 toc:
@@ -155,13 +139,11 @@ toc:
   # Automatically add list number to toc.
   number: true
 
-
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 #creative_commons: by-nc-sa
 #creative_commons:
-
 
 sidebar:
   # Sidebar Position, available value: left | right
@@ -178,14 +160,12 @@ sidebar:
   #display: hide
   #display: remove
 
-
 # Blogrolls
 #links_title: Links
 #links_layout: block
 #links_layout: inline
 #links:
-  #Title: http://example.com/
-
+#Title: http://example.com/
 
 # ---------------------------------------------------------------
 # Misc Theme Settings
@@ -200,17 +180,14 @@ custom_logo:
   enabled: false
   image:
 
-
 # Code Highlight theme
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
 
-
 # Automatically scroll page to section which is under <!-- more --> mark.
 scroll_to_more: true
-
 
 # Automatically Excerpt. Not recommand.
 # Please use <!-- more --> in the post to control excerpt accurately.
@@ -218,14 +195,10 @@ auto_excerpt:
   enable: true
   length: 150
 
-
 # Wechat Subscriber
 #wechat_subscriber:
-  #enabled: true
-  #qcode: /path/to/your/wechatqcode ex. /uploads/wechat-qcode.jpg
-  
-
-
+#enabled: true
+#qcode: /path/to/your/wechatqcode ex. /uploads/wechat-qcode.jpg
 
 # ---------------------------------------------------------------
 # Third Party Services Settings
@@ -235,7 +208,6 @@ auto_excerpt:
 mathjax:
   enable: false
   cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-
 
 # Swiftype Search API Key
 #swiftype_key:
@@ -266,13 +238,11 @@ mathjax:
 # See: https://www.google.com/webmasters/
 #google_site_verification:
 
-
 # Google Analytics
 #google_analytics:
 
 # CNZZ count
 #cnzz_siteid:
-
 
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!
@@ -283,16 +253,14 @@ duoshuo_info:
   user_id: 0
   #admin_nickname: Author
 
-
 # Facebook SDK Support.
 # https://github.com/iissnan/hexo-theme-next/pull/410
 facebook_sdk:
   enable: false
-  app_id:       #<app_id>
-  fb_admin:     #<user_id>
-  like_button:  #true
-  webmaster:    #true
-
+  app_id: #<app_id>
+  fb_admin: #<user_id>
+  like_button: #true
+  webmaster: #true
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
@@ -325,8 +293,6 @@ busuanzi_count:
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
 baidu_push: false
 
-
-
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
@@ -337,7 +303,6 @@ use_motion: true
 
 # Fancybox
 fancybox: true
-
 
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.
@@ -379,7 +344,6 @@ vendors:
   # Internal version: 4.4.0
   # http://fontawesome.io/
   fontawesome:
-
 
 # Assets
 css: css

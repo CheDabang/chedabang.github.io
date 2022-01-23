@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="CheDabang Blog">
 <meta property="og:description" content="背景
 一日在网上闲逛的之时，突然看到一个利用JQ插件实现canvas实现的电影黑客帝国的小Demo。觉得创意不错，就下载下来研究一下。">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-8457157148c3e569.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://yoursite.com/images/170113_0.png">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-fefabfb1e2de9843.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-c201d1ae918602e0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-fcd6067ed4c6ad4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -105,12 +105,12 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-b2b07acc9b6ab5b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-7ed731ab4d3e311f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-dbfb881780d2f57e.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2017-02-26T08:15:11.424Z">
+<meta property="og:updated_time" content="2022-01-23T15:16:49.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈for循环+canvas实现黑客帝国矩形阵">
 <meta name="twitter:description" content="背景
 一日在网上闲逛的之时，突然看到一个利用JQ插件实现canvas实现的电影黑客帝国的小Demo。觉得创意不错，就下载下来研究一下。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2064035-8457157148c3e569.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://yoursite.com/images/170113_0.png">
 
 
 
@@ -330,7 +330,7 @@
         <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><blockquote>
 <p>一日在网上闲逛的之时，突然看到一个利用JQ插件实现canvas实现的电影黑客帝国的小Demo。觉得创意不错，就下载下来研究一下。</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-8457157148c3e569.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="黑客帝国开场动画效果Demo"></p>
+<p><img src="/images/170113_0.png" alt="黑客帝国开场动画效果Demo"></p>
 <a id="more"></a>
 <h1 id="网上浏览jQuery的写法"><a href="#网上浏览jQuery的写法" class="headerlink" title="网上浏览jQuery的写法"></a>网上浏览jQuery的写法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> s = <span class="built_in">window</span>.screen;</div><div class="line">	<span class="keyword">var</span> width = q.width = s.width;</div><div class="line">	<span class="keyword">var</span> height = q.height;</div><div class="line">	<span class="keyword">var</span> yPositions = <span class="built_in">Array</span>(<span class="number">300</span>).join(<span class="number">0</span>).split(<span class="string">''</span>);</div><div class="line">	<span class="keyword">var</span> ctx = q.getContext(<span class="string">'2d'</span>);</div><div class="line">	<span class="keyword">var</span> draw = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		ctx.fillStyle = <span class="string">'rgba(0,0,0,.05)'</span>;</div><div class="line">		ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, width, height);</div><div class="line">		ctx.fillStyle = <span class="string">'red'</span>;</div><div class="line">		ctx.font = <span class="string">'10pt Georgia'</span>;</div><div class="line">		yPositions.map(<span class="function"><span class="keyword">function</span>(<span class="params">y, index</span>) </span>&#123;</div><div class="line">			text = <span class="built_in">String</span>.fromCharCode(<span class="number">1e2</span> + <span class="built_in">Math</span>.random() * <span class="number">33</span>);</div><div class="line">			x = (index * <span class="number">10</span>) + <span class="number">10</span>;</div><div class="line">			q.getContext(<span class="string">'2d'</span>).fillText(text, x, y);</div><div class="line">			<span class="keyword">if</span>(y &gt; <span class="built_in">Math</span>.random() * <span class="number">1e4</span>) &#123;</div><div class="line">				yPositions[index] = <span class="number">0</span>;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				yPositions[index] = y + <span class="number">10</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;;</div><div class="line">	RunMatrix();</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">RunMatrix</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		Game_Interval = setInterval(draw, <span class="number">1000</span>);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>全程100行不到的代码，主体的核心就是<strong>定时器</strong>调用canvas进行绘画处理。要是让我这种段子手来写，估计我把敲烂键盘都想不出这样营造效果。<strong>艺术细胞真的很重要咕~~(╯﹏╰)</strong></p>
@@ -577,7 +577,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
