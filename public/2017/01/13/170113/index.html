@@ -1,0 +1,690 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript,canvas," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="背景
+一日在网上闲逛的之时，突然看到一个利用JQ插件实现canvas实现的电影黑客帝国的小Demo。觉得创意不错，就下载下来研究一下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈for循环+canvas实现黑客帝国矩形阵">
+<meta property="og:url" content="http://yoursite.com/2017/01/13/170113/index.html">
+<meta property="og:site_name" content="CheDabang Blog">
+<meta property="og:description" content="背景
+一日在网上闲逛的之时，突然看到一个利用JQ插件实现canvas实现的电影黑客帝国的小Demo。觉得创意不错，就下载下来研究一下。">
+<meta property="og:image" content="http://yoursite.com/images/170113_0.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-fefabfb1e2de9843.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-c201d1ae918602e0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-fcd6067ed4c6ad4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-9936ae52bbad675f.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-5fa566ea953e4d28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-ec0ba66031a49406.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-862b927bbbfc9b63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-d567e469bcbf3886.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-c0c62ce3f7681f6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-b2b07acc9b6ab5b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-7ed731ab4d3e311f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-dbfb881780d2f57e.gif?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2022-01-23T15:16:49.097Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈for循环+canvas实现黑客帝国矩形阵">
+<meta name="twitter:description" content="背景
+一日在网上闲逛的之时，突然看到一个利用JQ插件实现canvas实现的电影黑客帝国的小Demo。觉得创意不错，就下载下来研究一下。">
+<meta name="twitter:image" content="http://yoursite.com/images/170113_0.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 浅谈for循环+canvas实现黑客帝国矩形阵 | CheDabang Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CheDabang Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                浅谈for循环+canvas实现黑客帝国矩形阵
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-13T20:53:32+08:00" content="2017-01-13">
+              2017-01-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端浅谈/" itemprop="url" rel="index">
+                    <span itemprop="name">前端浅谈</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><blockquote>
+<p>一日在网上闲逛的之时，突然看到一个利用JQ插件实现canvas实现的电影黑客帝国的小Demo。觉得创意不错，就下载下来研究一下。</p>
+</blockquote>
+<p><img src="/images/170113_0.png" alt="黑客帝国开场动画效果Demo"></p>
+<a id="more"></a>
+<h1 id="网上浏览jQuery的写法"><a href="#网上浏览jQuery的写法" class="headerlink" title="网上浏览jQuery的写法"></a>网上浏览jQuery的写法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> s = <span class="built_in">window</span>.screen;</div><div class="line">	<span class="keyword">var</span> width = q.width = s.width;</div><div class="line">	<span class="keyword">var</span> height = q.height;</div><div class="line">	<span class="keyword">var</span> yPositions = <span class="built_in">Array</span>(<span class="number">300</span>).join(<span class="number">0</span>).split(<span class="string">''</span>);</div><div class="line">	<span class="keyword">var</span> ctx = q.getContext(<span class="string">'2d'</span>);</div><div class="line">	<span class="keyword">var</span> draw = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		ctx.fillStyle = <span class="string">'rgba(0,0,0,.05)'</span>;</div><div class="line">		ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, width, height);</div><div class="line">		ctx.fillStyle = <span class="string">'red'</span>;</div><div class="line">		ctx.font = <span class="string">'10pt Georgia'</span>;</div><div class="line">		yPositions.map(<span class="function"><span class="keyword">function</span>(<span class="params">y, index</span>) </span>&#123;</div><div class="line">			text = <span class="built_in">String</span>.fromCharCode(<span class="number">1e2</span> + <span class="built_in">Math</span>.random() * <span class="number">33</span>);</div><div class="line">			x = (index * <span class="number">10</span>) + <span class="number">10</span>;</div><div class="line">			q.getContext(<span class="string">'2d'</span>).fillText(text, x, y);</div><div class="line">			<span class="keyword">if</span>(y &gt; <span class="built_in">Math</span>.random() * <span class="number">1e4</span>) &#123;</div><div class="line">				yPositions[index] = <span class="number">0</span>;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				yPositions[index] = y + <span class="number">10</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;;</div><div class="line">	RunMatrix();</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">RunMatrix</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		Game_Interval = setInterval(draw, <span class="number">1000</span>);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>全程100行不到的代码，主体的核心就是<strong>定时器</strong>调用canvas进行绘画处理。要是让我这种段子手来写，估计我把敲烂键盘都想不出这样营造效果。<strong>艺术细胞真的很重要咕~~(╯﹏╰)</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-fefabfb1e2de9843.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-c201d1ae918602e0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>老王：“等等大棒！不是说<strong>js+canvas</strong>实现黑客帝国矩形雨，可是你这个附上的代码分明是<strong>jQ+canvas.</strong>”</p>
+<p>老管：”就是！你这个标题汪，这是又要搞事情呀！”</p>
+<p>我：“别急呀！这个<strong>jQ+canvas</strong>因为网上很多人博客都有写，所以这边只是附上一下jQ代码供大家参考。下面才是我今天要通过for循环代替上面的<strong>map()</strong>来实现的！！</p>
+<p>夫子：别净扯理由，你是根本就不会<strong>map()</strong>用法！！”</p>
+<p>老齐： “净说什么大实话！大棒是根本看不懂……”</p>
+<p>我：………好吧！你们说对了，我的确是不会<strong>map()</strong>方法。<strong>（让我蹲墙角哭会/((╥╯^╰╥)</strong>”</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-fcd6067ed4c6ad4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="你们开心就好！"></p>
+<h1 id="万能for循环的写法"><a href="#万能for循环的写法" class="headerlink" title="万能for循环的写法"></a>万能for循环的写法</h1><p>好了不扯犊子了，言归正传。让我们回到下面要讲的代码上面来。</p>
+<h2 id="1、基本准备工作"><a href="#1、基本准备工作" class="headerlink" title="1、基本准备工作"></a>1、基本准备工作</h2><h3 id="1-1、HTML骨架部分"><a href="#1-1、HTML骨架部分" class="headerlink" title="1.1、HTML骨架部分"></a>1.1、HTML骨架部分</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">canvas</span> id=<span class="string">"hacker"</span> <span class="attribute">width</span>=<span class="string">"500"</span> height=<span class="string">"500"</span>&gt;请使用Google浏览器或者IE9以上&lt;/canvas&gt;</div></pre></td></tr></table></figure>
+<h3 id="1-2、JavaScript部分"><a href="#1-2、JavaScript部分" class="headerlink" title="1.2、JavaScript部分"></a>1.2、JavaScript部分</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> hacker = document.getElementById(<span class="string">"hacker"</span>);</div><div class="line"><span class="built_in">var</span> <span class="built_in">width</span> = hacker.<span class="built_in">width</span> = screen.<span class="built_in">width</span>;  //screen.<span class="built_in">width</span>拿到是当前屏幕宽度</div><div class="line"><span class="built_in">var</span> <span class="built_in">height</span> = hacker.<span class="built_in">height</span>;</div><div class="line"><span class="built_in">var</span> ctx = haceker.getContext('2d');</div></pre></td></tr></table></figure>
+<p>做完这几步之后，我们就能够拿到当前屏幕的宽度、以及canvas画布的宽度和得到canvas画布的上下文。</p>
+<h2 id="2、数组的准备"><a href="#2、数组的准备" class="headerlink" title="2、数组的准备"></a>2、数组的准备</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> <span class="built_in">num</span> = Math.ceil(<span class="built_in">width</span> / <span class="number">10</span>);</div><div class="line"><span class="built_in">var</span> y = Array(<span class="built_in">num</span>).<span class="built_in">join</span>(<span class="number">0</span>).<span class="built_in">split</span>('');</div></pre></td></tr></table></figure>
+<p>这里估计有人会询问了，这里创建一个数组是干嘛。为什么数组的length &gt;= num？</p>
+<p>O(∩_∩)O哈哈~，别着急，后面的代码就会个大家逐一解释了。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-9936ae52bbad675f.gif?imageMogr2/auto-orient/strip" alt="不要激动，先安静的当一个美男子！"></p>
+<h2 id="3、定义一个重复调用核心draw-方法"><a href="#3、定义一个重复调用核心draw-方法" class="headerlink" title="3、定义一个重复调用核心draw()方法"></a>3、定义一个重复调用核心draw()方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> draw = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	ctx.fillStyle = <span class="string">'rgba(0,0,0,.05)'</span>;   <span class="comment">//创意核心语句之一</span></div><div class="line">	ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, width, height);</div><div class="line">	ctx.fillStyle = <span class="string">'#0f0'</span>;</div><div class="line">	ctx.font = <span class="string">'10px Microsoft YaHei'</span>;</div><div class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; y.length; i++) &#123;</div><div class="line">	<span class="keyword">var</span> x = (i * <span class="number">10</span>) + <span class="number">10</span>;</div><div class="line">	text = <span class="built_in">String</span>.fromCharCode(<span class="number">1e2</span> + <span class="built_in">Math</span>.random() * <span class="number">33</span>);</div><div class="line">	<span class="keyword">var</span> y1 = y[i];</div><div class="line">	ke.getContext(<span class="string">'2d'</span>).fillText(text, x, y1);</div><div class="line">	<span class="built_in">console</span>.log(height);</div><div class="line">	<span class="keyword">if</span>(y1 &gt; <span class="built_in">Math</span>.random() * <span class="number">10</span> * height) &#123;</div><div class="line">		y[i] = <span class="number">0</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		y[i] = <span class="built_in">parseInt</span>(y[i]) + <span class="number">10</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3-1、ctx绘画过程解释"><a href="#3-1、ctx绘画过程解释" class="headerlink" title="3.1、ctx绘画过程解释**"></a>3.1、ctx绘画过程解释**</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctx.fillStyle = 'rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">.05</span>)';    <span class="comment">//创意核心语句之一</span></div><div class="line">ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, width, height);</div></pre></td></tr></table></figure>
+<p>这里为设定的区域铺上一个rgba(0,0,0,.05) 这样黑色半透明的背景。</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctx.<span class="attr">fillStyle</span> = '<span class="comment">#0f0';</span></div><div class="line">ctx.<span class="attr">font</span> = '<span class="number">10</span>px Microsoft YaHei';</div></pre></td></tr></table></figure>
+<p>这里就是画出大小为 10px，字体为微软雅黑的字体。</p>
+<p>两行代码看起来就是很普通的代码，但是组合起来却发生一个<strong>质</strong>的变化。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-5fa566ea953e4d28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>为什么会有层次感呢？要知道getContext(‘2d’)这句语句，就决定了canvas只能绘制2D图像，不能绘制3D层次感的图形！</p>
+<p>答案就在 <code>ctx.fillStyle = &#39;rgba(0,0,0,.05)&#39;;</code>上面，当重复调用方法的时候，这种半透明的灰黑色背景就会盖在之前的画好绿色文字上面。因此因此就造成了有文字是绿色，有的文字变成灰绿色。</p>
+<p>各个文字之间形成一种视觉差，从而让人感觉到3D立体矩形代码阵效果。所以当我发现两组这么普通的代码组合起发生如此厉害效果，当即激动拍了拍键盘。大呼一声！</p>
+<p><strong>“哇靠！这个真心666！”</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-ec0ba66031a49406.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="喵星人发来贺赞"></p>
+<h3 id="3-2、for循环解释"><a href="#3-2、for循环解释" class="headerlink" title="3.2、for循环解释"></a>3.2、for循环解释</h3><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">for(<span class="name">i</span> = <span class="number">0</span><span class="comment">; i &lt; num; i++) &#123;</span></div><div class="line">	var x = (<span class="name">i</span> * 10) + 10;</div><div class="line">	text = String.fromCharCode(65 + Math.random() * <span class="number">62</span>)<span class="comment">;</span></div><div class="line">	var y1 = y[i]<span class="comment">;</span></div><div class="line">	ctx.fillText(<span class="name">text</span>, x, y1)<span class="comment">;</span></div><div class="line">	console.log(<span class="name">height</span>)<span class="comment">;</span></div><div class="line">	if(<span class="name">y1</span> &gt; Math.random() * 10 * height) &#123;</div><div class="line">			y[i] = <span class="number">0</span><span class="comment">;</span></div><div class="line">		&#125; else &#123;</div><div class="line">			y[i] = parseInt(<span class="name">y</span>[i]) + <span class="number">10</span><span class="comment">;</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="3-3、关于canvasX轴上面文字控制"><a href="#3-3、关于canvasX轴上面文字控制" class="headerlink" title="3.3、关于canvasX轴上面文字控制**"></a>3.3、关于canvasX轴上面文字控制**</h3><p>因为前面每次画的文字大小都是10px，那么如果我把canvasX轴平铺满。需要多少个文字呢。</p>
+<p>答案 = <code>Math.ceil(width / 10);</code>   =&gt;   即就是我前面的<strong>num</strong></p>
+<p> <strong>小说明：</strong></p>
+<p>为什么得用<strong>Math.ceil()</strong>向上取整，而不能用<strong>Math.floor</strong>向下取整，<strong>parseInt()</strong>之类。</p>
+<p>因为假设<strong>num = 300.8</strong>样子，那么使用<strong>Math.floor()</strong> 或者<strong>parseInt()</strong>,就好把这个数转换成<strong>300</strong></p>
+<p>那么后面，绘制300个文字在canvasX轴，那么最右边就还有0.8个文字，也就是<strong>8px</strong>空隙一种没有字母出现。向上取整，就会铺满，多的部分超出canvas区域，就会消失。</p>
+<p><code>text = String.fromCharCode(65 + Math.random() * 62);</code>这里就是每次for循环的时候产生65 - 127 的数字，之后将其转换为大写、小写字母，以及一些符号</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-862b927bbbfc9b63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="控制台检测text"></p>
+<h3 id="3-4、关于canvasY轴的控制"><a href="#3-4、关于canvasY轴的控制" class="headerlink" title="3.4、关于canvasY轴的控制**"></a>3.4、关于canvasY轴的控制**</h3><p>这里前面定义的数组就派上用场了<code>var y = Array(num).join(0).split(&#39;&#39;);</code>,这里就是用于记录与控制每一次canvas文字的Y轴。</p>
+<p>为什么要用数组去记录呢？说实话，当初我也是这么认为的，所以我没有尝试控制每一个文字Y轴的数据，让所以的Y轴依次累加，结果效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-d567e469bcbf3886.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="让所有的文字共用Y轴，然后依次累加"></p>
+<p>所以之后我就奇思妙想，让每次文字是排列X轴平铺数字随机呈现。例如第一次平铺300个，第二次平铺100个，第三次平铺200…….,但是我还是错了：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-c0c62ce3f7681f6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="让X轴随机平铺数量"></p>
+<h1 id="错误的代码示范"><a href="#错误的代码示范" class="headerlink" title="错误的代码示范"></a>错误的代码示范</h1><p><img src="http://upload-images.jianshu.io/upload_images/2064035-b2b07acc9b6ab5b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="失败的代码尝试"></p>
+<p>所以多次失败的尝试之后，发现还是得控制利用一个数组控记录与控制每一个数字Y轴的数据。<br><img src="http://upload-images.jianshu.io/upload_images/2064035-7ed731ab4d3e311f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用Y轴分配每一个X轴点之后，后面产生如此的效果"></p>
+<h1 id="代码的收尾"><a href="#代码的收尾" class="headerlink" title="代码的收尾"></a>代码的收尾</h1><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">   <span class="keyword">Run</span><span class="bash">();</span></div><div class="line">   function <span class="keyword">Run</span><span class="bash">() &#123;</span></div><div class="line">	Game_Interval = setInterval(draw, <span class="number">30</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>之后设置一个定时器，每次间隔30ms调用一次，然后大功告成。一个炫酷的黑客帝国矩形雨效果就出来了。</p>
+<p>当然前面JavaScript代码可能太凌乱，所以这边就把JavaScript的全部呈上：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">   <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> kacker = <span class="built_in">document</span>.getElementById(<span class="string">"hacker"</span>);</div><div class="line">  <span class="keyword">var</span> width = hacker.width = screen.width;</div><div class="line">  <span class="keyword">var</span> height = kacker.height;</div><div class="line">  <span class="keyword">var</span> ctx = hacker.getContext(<span class="string">'2d'</span>);</div><div class="line">  <span class="keyword">var</span> num = <span class="built_in">Math</span>.ceil(width / <span class="number">10</span>);</div><div class="line">  <span class="keyword">var</span> y = <span class="built_in">Array</span>(num).join(<span class="number">0</span>).split(<span class="string">''</span>);</div><div class="line">  <span class="keyword">var</span> draw = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	ctx.fillStyle = <span class="string">'rgba(0,0,0,.05)'</span>;</div><div class="line">	ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, width, height);</div><div class="line">	ctx.fillStyle = <span class="string">'#0f0'</span>;</div><div class="line">	ctx.font = <span class="string">'10px Microsoft YaHei'</span>;</div><div class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">		<span class="keyword">var</span> x = (i * <span class="number">10</span>) + <span class="number">10</span>;</div><div class="line">		text = <span class="built_in">String</span>.fromCharCode(<span class="number">65</span> + <span class="built_in">Math</span>.random() * <span class="number">62</span>);</div><div class="line">		<span class="comment">//console.log(text);  用来检测 text 的值</span></div><div class="line">		<span class="keyword">var</span> y1 = y[i];</div><div class="line">		ctx.fillText(text, x, y1);</div><div class="line">		<span class="keyword">if</span>(y1 &gt; <span class="built_in">Math</span>.random() * <span class="number">10</span> * height) &#123;</div><div class="line">			y[i] = <span class="number">0</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			y[i] = <span class="built_in">parseInt</span>(y[i]) + <span class="number">10</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">Run();</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Run</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	Game_Interval = setInterval(draw, <span class="number">100</span>);</div><div class="line">    &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>看到这里不要以为代码就此结束了，好好吸收那个for循环之后。接下来再返回上面看一下map()方法，相信map()方法的用法是不是一下子清晰明了。一箭双雕，既实现了5毛的特效，又帮助熟悉了一个map()方法用法.</p>
+<p>效果预览：<a href="http://che-dabang.oss-cn-shenzhen.aliyuncs.com/hacker.html" target="_blank" rel="external">黑客帝国矩形阵</a><br>（ps：效果图挂在阿里云上面，部分平台点击进去可能会有提示，例如微信，请忽略…..）</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-dbfb881780d2f57e.gif?imageMogr2/auto-orient/strip" alt="动次！打次！铛！"><br>我是车大棒,深藏功与名！（滑稽脸）</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/canvas/" rel="tag">#canvas</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/06/170106/" rel="next" title="车大棒浅谈微信红包随机分配猜想">
+                <i class="fa fa-chevron-left"></i> 车大棒浅谈微信红包随机分配猜想
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            作者介绍
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="车大棒" />
+          <p class="site-author-name" itemprop="name">车大棒</p>
+          <p class="site-description motion-element" itemprop="description">吾虽浪迹天涯，却未迷失本心</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/CheDabang" target="_blank" title="GItHub">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  GItHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/025df949ff39" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网上浏览jQuery的写法"><span class="nav-number">2.</span> <span class="nav-text">网上浏览jQuery的写法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#万能for循环的写法"><span class="nav-number">3.</span> <span class="nav-text">万能for循环的写法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、基本准备工作"><span class="nav-number">3.1.</span> <span class="nav-text">1、基本准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1、HTML骨架部分"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.1、HTML骨架部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2、JavaScript部分"><span class="nav-number">3.1.2.</span> <span class="nav-text">1.2、JavaScript部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、数组的准备"><span class="nav-number">3.2.</span> <span class="nav-text">2、数组的准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、定义一个重复调用核心draw-方法"><span class="nav-number">3.3.</span> <span class="nav-text">3、定义一个重复调用核心draw()方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1、ctx绘画过程解释"><span class="nav-number">3.3.1.</span> <span class="nav-text">3.1、ctx绘画过程解释**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2、for循环解释"><span class="nav-number">3.3.2.</span> <span class="nav-text">3.2、for循环解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3、关于canvasX轴上面文字控制"><span class="nav-number">3.3.3.</span> <span class="nav-text">3.3、关于canvasX轴上面文字控制**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4、关于canvasY轴的控制"><span class="nav-number">3.3.4.</span> <span class="nav-text">3.4、关于canvasY轴的控制**</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误的代码示范"><span class="nav-number">4.</span> <span class="nav-text">错误的代码示范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码的收尾"><span class="nav-number">5.</span> <span class="nav-text">代码的收尾</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CheDabang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
