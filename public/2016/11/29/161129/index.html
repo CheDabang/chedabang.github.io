@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,45 +34,38 @@
 
 
 
-  
-  
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
   
   
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.png?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="JavaScript,前端工具," />
@@ -77,72 +77,68 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.0.1" />
 
 
-
-
-
-
-<meta name="description" content="背景：在前端的开发中上线之前可能会做的事情：
-
-1、文件目录调整HTML注释、换行等操作。2、CSS压缩合并、JS代码压缩重命名。3、CSS语法检测4.、…….
-
-上述这些操作是重复而枯燥的，如果是人工来一项一项做，会浪费大量时间。而且人工操作有时候还会带来一些想不到的bug。例如css改动导致页面错位、js改动可能导致功能不正常。
-这个时候web前端自动化工具就出现了，当然前端的飞速发展。各种w">
+<meta name="description" content="背景：在前端的开发中上线之前可能会做的事情：  1、文件目录调整HTML注释、换行等操作。2、CSS压缩合并、JS代码压缩重命名。3、CSS语法检测4.、…….  上述这些操作是重复而枯燥的，如果是人工来一项一项做，会浪费大量时间。而且人工操作有时候还会带来一些想不到的bug。例如css改动导致页面错位、js改动可能导致功能不正常。 这个时候web前端自动化工具就出现了，当然前端的飞速发展。各种w">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈web前端自动化工具--gulp">
-<meta property="og:url" content="http://yoursite.com/2016/11/29/161129/index.html">
+<meta property="og:url" content="http://example.com/2016/11/29/161129/index.html">
 <meta property="og:site_name" content="CheDabang Blog">
-<meta property="og:description" content="背景：在前端的开发中上线之前可能会做的事情：
-
-1、文件目录调整HTML注释、换行等操作。2、CSS压缩合并、JS代码压缩重命名。3、CSS语法检测4.、…….
-
-上述这些操作是重复而枯燥的，如果是人工来一项一项做，会浪费大量时间。而且人工操作有时候还会带来一些想不到的bug。例如css改动导致页面错位、js改动可能导致功能不正常。
-这个时候web前端自动化工具就出现了，当然前端的飞速发展。各种w">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-40d1cf9e0a03700e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-517808cd13e4dbed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-f8eff2e7c51bd17f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-0c86e0cdd1d2ca3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-0d29b721eeec2239.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-bad2db614c512f1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-62d40a373a818dcc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-a53b9347173740b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-1766f066c9851be1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-979f386698a6cf0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-e89ef28fdc25ed42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-26T09:21:01.009Z">
+<meta property="og:description" content="背景：在前端的开发中上线之前可能会做的事情：  1、文件目录调整HTML注释、换行等操作。2、CSS压缩合并、JS代码压缩重命名。3、CSS语法检测4.、…….  上述这些操作是重复而枯燥的，如果是人工来一项一项做，会浪费大量时间。而且人工操作有时候还会带来一些想不到的bug。例如css改动导致页面错位、js改动可能导致功能不正常。 这个时候web前端自动化工具就出现了，当然前端的飞速发展。各种w">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/images/161129_0.webp">
+<meta property="og:image" content="http://example.com/images/161129_1.webp">
+<meta property="og:image" content="http://example.com/images/161129_2.png">
+<meta property="og:image" content="http://example.com/images/161129_3.webp">
+<meta property="og:image" content="http://example.com/images/161129_4.webp">
+<meta property="og:image" content="http://example.com/images/161129_5.webp">
+<meta property="og:image" content="http://example.com/images/161129_7.webp">
+<meta property="og:image" content="http://example.com/images/161129_8.webp">
+<meta property="og:image" content="http://example.com/images/161129_9.webp">
+<meta property="og:image" content="http://example.com/images/161129_10.webp">
+<meta property="article:published_time" content="2016-11-29T02:23:32.000Z">
+<meta property="article:modified_time" content="2022-02-15T03:36:56.238Z">
+<meta property="article:author" content="CheDabang">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="前端工具">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅谈web前端自动化工具--gulp">
-<meta name="twitter:description" content="背景：在前端的开发中上线之前可能会做的事情：
-
-1、文件目录调整HTML注释、换行等操作。2、CSS压缩合并、JS代码压缩重命名。3、CSS语法检测4.、…….
-
-上述这些操作是重复而枯燥的，如果是人工来一项一项做，会浪费大量时间。而且人工操作有时候还会带来一些想不到的bug。例如css改动导致页面错位、js改动可能导致功能不正常。
-这个时候web前端自动化工具就出现了，当然前端的飞速发展。各种w">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2064035-40d1cf9e0a03700e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://example.com/images/161129_0.webp">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> 浅谈web前端自动化工具--gulp | CheDabang Blog </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://example.com/2016/11/29/161129/"/>
+
+
+
+
+
+  <title>浅谈web前端自动化工具--gulp | CheDabang Blog</title>
   
 
 
@@ -152,36 +148,42 @@
 
 
 
+<meta name="generator" content="Hexo 6.0.0"></head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">CheDabang Blog</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CheDabang Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -192,7 +194,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -201,18 +203,8 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -221,22 +213,32 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
@@ -247,6 +249,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -261,57 +265,75 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2016/11/29/161129/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="车大棒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CheDabang Blog">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                浅谈web前端自动化工具--gulp
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">浅谈web前端自动化工具--gulp</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-29T10:23:32+08:00" content="2016-11-29">
-              2016-11-29
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-29T10:23:32+08:00">
+                2016-11-29
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端浅谈/" itemprop="url" rel="index">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E6%B5%85%E8%B0%88/" itemprop="url" rel="index">
                     <span itemprop="name">前端浅谈</span>
                   </a>
                 </span>
 
                 
                 
-
               
             </span>
           
@@ -321,16 +343,21 @@
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -343,54 +370,65 @@
 </blockquote>
 <p>上述这些操作是重复而枯燥的，如果是人工来一项一项做，会浪费大量时间。而且人工操作有时候还会带来一些想不到的bug。例如css改动导致页面错位、js改动可能导致功能不正常。</p>
 <p>这个时候web前端自动化工具就出现了，当然前端的飞速发展。各种web前端自动化工具也层出不穷，这里就浅谈一下我个人用的web前端自动化工具–<strong>gulp</strong>。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-40d1cf9e0a03700e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="web前端自动化构建工具"></p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>1.1、   打开<a href="http://nodejs.org/" target="_blank" rel="external">nodejs官网</a>，点击硕大的绿色Download按钮，它会根据系统信息选择对应版本（.msi文件）。然后像安装QQ一样安装它就可以了（安装路径随意）。因为在安装并使用gulp的时候，需要先安装node.js.利用 Node.js 流的威力，你可以快速构建项目并减少频繁的 IO 操作。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-517808cd13e4dbed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="node.js官网"></p>
+<p><img src="/images/161129_0.webp" alt="web前端自动化构建工具"></p>
+<span id="more"></span>
+
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>1.1、   打开<a target="_blank" rel="noopener" href="http://nodejs.org/">nodejs官网</a>，点击硕大的绿色Download按钮，它会根据系统信息选择对应版本（.msi文件）。然后像安装QQ一样安装它就可以了（安装路径随意）。因为在安装并使用gulp的时候，需要先安装node.js.利用 Node.js 流的威力，你可以快速构建项目并减少频繁的 IO 操作。</p>
+<p><img src="/images/161129_1.webp" alt="node.js官网"></p>
 <p>1.2、    安装好了之后，打开cmd命令行输入<strong>node  -v</strong>，用来检测是否安装成功。如安装成功则提示node.js的版本号。</p>
-<p>1.3 、   由于nodejs已经集成了npm，所以之前npm也一并安装好了。同样可以通过输入 <strong>npm -v </strong>来测试是否成功安装。同上述node.js方法一样，安装成功则提示npm的版本号。</p>
-<h1 id="gulp全局安装"><a href="#gulp全局安装" class="headerlink" title="gulp全局安装"></a>gulp全局安装</h1><p>2.1、说明：全局安装gulp目的是为了通过她执行gulp任务；<br>2.2、安装：命令提示符执行<strong>npm install gulp  -g</strong>；<br>2.3、查看是否正确安装：命令提示符执行<strong>gulp -v</strong>，出现版本号即为正确安装。<br><img src="http://upload-images.jianshu.io/upload_images/2064035-f8eff2e7c51bd17f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="CMD版本检测"></p>
+<p>1.3 、   由于nodejs已经集成了npm，所以之前npm也一并安装好了。同样可以通过输入 **npm -v **来测试是否成功安装。同上述node.js方法一样，安装成功则提示npm的版本号。</p>
+<h1 id="gulp全局安装"><a href="#gulp全局安装" class="headerlink" title="gulp全局安装"></a>gulp全局安装</h1><p>2.1、说明：全局安装gulp目的是为了通过她执行gulp任务；<br>2.2、安装：命令提示符执行<code>npm install gulp  -g</code>；<br>2.3、查看是否正确安装：命令提示符执行<code>gulp -v</code>，出现版本号即为正确安装。<br><img src="/images/161129_2.png" alt="CMD版本检测"></p>
 <h1 id="新建一个package-json文件"><a href="#新建一个package-json文件" class="headerlink" title="新建一个package.json文件"></a>新建一个package.json文件</h1><p>3.1、说明：package.json是基于nodejs项目必不可少的配置文件，它是存放在项目根目录的普通json文件；<br>3.2、以我个人的一个项目当中的一个json文件为例</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-0c86e0cdd1d2ca3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="package.json文件"></p>
+<p><img src="/images/161129_3.webp" alt="package.json文件"></p>
 <p>3.3、当然如果说手动配置这些东西，那么今天的主题估计就不能够称为web前端自动化了。这里我们通过CMD命令符执行<strong>npm init</strong> </p>
 <p>3.4、为了方便读者更好了解这个 npm init 的使用，我讲自己原本的package文件删除。重新执行<strong>npm init</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-0d29b721eeec2239.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通过npm init 配置gulp文件"></p>
-<h1 id="安装gulp-本地服务"><a href="#安装gulp-本地服务" class="headerlink" title="安装gulp 本地服务"></a>安装gulp 本地服务</h1><p>4.1、进入该项目目录下，输入<strong>npm install gulp-less –save-dev</strong><br>4.2、 这个时候可能有人会问，为什么前面全局下安装了一个gulp，现在又在本地文件下还要安装gulp。我们全局安装了gulp，项目也安装了gulp。为啥装两遍？？<br><img src="http://upload-images.jianshu.io/upload_images/2064035-bad2db614c512f1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="为什么要装2"><br><strong>说明</strong>：全局安装gulp是为了执行gulp任务，本地安装gulp则是为了调用gulp插件的功能，作为项目的开发依赖（devDependencies）。<br>4.3、之后继续安装gulp插件。本示例以gulp-rename（文件重命名）和gulp-uglify（js代码压缩）为例，命令提示符分别执行<strong>npm install gulp-rename –save-dev </strong>   和 <strong>npm install gulp-uglify –save-dev </strong>.<br>4.4、CMD指令执行完毕之后，这个时候你的当前目录下，就生成了<strong>node_modules</strong>文件夹。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-62d40a373a818dcc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gulp项目文件夹"></p>
-<h1 id="新建gulpfile-js文件（重要）"><a href="#新建gulpfile-js文件（重要）" class="headerlink" title="新建gulpfile.js文件（重要）"></a>新建gulpfile.js文件（重要）</h1><p><strong>gulpfile.js</strong>这个入口文件，在前面已经出现了不少次数了。下面就开始关于gulpfile.js文件配置，还是以本人的项目代码为例：<br><img src="http://upload-images.jianshu.io/upload_images/2064035-a53b9347173740b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gulpfile.js"></p>
+<p><img src="/images/161129_4.webp" alt="通过npm init 配置gulp文件"></p>
+<h1 id="安装gulp-本地服务"><a href="#安装gulp-本地服务" class="headerlink" title="安装gulp 本地服务"></a>安装gulp 本地服务</h1><p>4.1、进入该项目目录下，输入<code>npm install gulp-less --save-dev</code><br>4.2、 这个时候可能有人会问，为什么前面全局下安装了一个gulp，现在又在本地文件下还要安装gulp。我们全局安装了gulp，项目也安装了gulp。为啥装两遍？？<br><img src="/images/161129_5.webp" alt="讲道理嘛"></p>
+<p><strong>说明</strong>：全局安装gulp是为了执行gulp任务，本地安装gulp则是为了调用gulp插件的功能，作为项目的开发依赖（devDependencies）。</p>
+<p>4.3、之后继续安装gulp插件。本示例以gulp-rename（文件重命名）和gulp-uglify（js代码压缩）为例，命令提示符分别执行<code>npm install gulp-rename --save-dev</code>   和 <code>npm install gulp-uglify --save-dev </code>.</p>
+<p>4.4、CMD指令执行完毕之后，这个时候你的当前目录下，就生成了<code>node_modules</code>文件夹。</p>
+<h1 id="新建gulpfile-js文件（重要）"><a href="#新建gulpfile-js文件（重要）" class="headerlink" title="新建gulpfile.js文件（重要）"></a>新建gulpfile.js文件（重要）</h1><p><code>gulpfile.js</code>这个配置工具的入口文件，下面就开始关于gulpfile.js文件配置，还是以本人的项目代码为例：<br><img src="/images/161129_7.webp" alt="gulpfile.js"></p>
 <h1 id="gulp运行"><a href="#gulp运行" class="headerlink" title="gulp运行"></a>gulp运行</h1><p>6.1、进入gulpfile文件下打开CMD，输入<strong>gulp dabang</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-1766f066c9851be1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gulp dabang简易操作"></p>
+<p><img src="/images/161129_8.webp" alt="gulp dabang简易操作"></p>
 <p>6.2、运行成功之后，最后我的文件夹当中出现一个js代码压缩，后缀名添加min的js文件。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-979f386698a6cf0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gulp自动压缩重命名后的chedabang.js文件"></p>
-<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>7.1、安装nodejs；<br>7.2、gulp全局安装<strong>npm install gulp  -g</strong><br>7.3、项目文件安装本地gulp服务 <strong>npm install gulp-less –save-dev</strong>以及相应的gulp 插件<br>7.4、新建package.json文件；<br>7.5、新建gulpfile.js文件；<br>7.6、通过命令提示符运行gulp任务</p>
-<p>以上就是关于web前端自动工具–<strong>gulp</strong>个人的简单一点的使用，更多gulp 插件以及API使用，请访问请查看 <a href="http://www.gulpjs.com.cn/docs/" target="_blank" rel="external">gulp中文网</a>.</p>
+<p><img src="/images/161129_9.webp" alt="gulp自动压缩重命名后的chedabang.js文件"></p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ol>
+<li>安装nodejs；</li>
+<li>gulp全局安装<strong>npm install gulp  -g</strong></li>
+<li>项目文件安装本地gulp服务 <strong>npm install gulp-less –save-dev</strong>以及相应的gulp 插件</li>
+<li>新建package.json文件；</li>
+<li>新建gulpfile.js文件；</li>
+<li>通过命令提示符运行gulp任务</li>
+</ol>
+<p>以上就是关于web前端自动工具–<strong>gulp</strong>个人的简单一点的使用，更多gulp 插件以及API使用，请访问请查看 <a target="_blank" rel="noopener" href="http://www.gulpjs.com.cn/docs/">gulp中文网</a>.</p>
 <p><strong>注：以上就是个人对于gulp使用的一点心得，欢迎各位大佬(￣ε(#￣)打脸指教！！</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-e89ef28fdc25ed42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="欢迎大佬指点"></p>
+<p><img src="/images/161129_10.webp" alt="欢迎大佬指点"></p>
 
       
     </div>
+    
+    
+    
 
-    <div>
-      
-        
-      
-    </div>
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
-            <a href="/tags/前端工具/" rel="tag">#前端工具</a>
+            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/" rel="tag"># 前端工具</a>
           
         </div>
+      
+
+      
+      
       
 
       
@@ -402,6 +440,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -416,6 +456,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -431,9 +475,9 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
+
+  
+
 
 
         </div>
@@ -449,102 +493,104 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            作者介绍
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="车大棒" />
-          <p class="site-author-name" itemprop="name">车大棒</p>
-          <p class="site-description motion-element" itemprop="description">吾虽浪迹天涯，却未迷失本心</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="车大棒" />
+            
+              <p class="site-author-name" itemprop="name">车大棒</p>
+              <p class="site-description motion-element" itemprop="description">吾虽浪迹天涯，却未迷失本心</p>
           </div>
 
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
+          <nav class="site-state motion-element">
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
             
-              <span class="links-of-author-item">
-                <a href="https://github.com/CheDabang" target="_blank" title="GItHub">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  GItHub
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
-              </span>
+              </div>
             
-              <span class="links-of-author-item">
-                <a href="http://www.jianshu.com/u/025df949ff39" target="_blank" title="简书">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  简书
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
                 </a>
-              </span>
+              </div>
             
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
+
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-
-        
-        
-
-        
-        
-
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景："><span class="nav-number">1.</span> <span class="nav-text">背景：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp全局安装"><span class="nav-number">3.</span> <span class="nav-text">gulp全局安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新建一个package-json文件"><span class="nav-number">4.</span> <span class="nav-text">新建一个package.json文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装gulp-本地服务"><span class="nav-number">5.</span> <span class="nav-text">安装gulp 本地服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新建gulpfile-js文件（重要）"><span class="nav-number">6.</span> <span class="nav-text">新建gulpfile.js文件（重要）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp运行"><span class="nav-number">7.</span> <span class="nav-text">gulp运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">8.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">背景：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">gulp全局安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AApackage-json%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">新建一个package.json文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85gulp-%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1"><span class="nav-number">5.</span> <span class="nav-text">安装gulp 本地服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E5%BB%BAgulpfile-js%E6%96%87%E4%BB%B6%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">新建gulpfile.js文件（重要）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulp%E8%BF%90%E8%A1%8C"><span class="nav-number">7.</span> <span class="nav-text">gulp运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">8.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -557,36 +603,50 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">CheDabang</span>
+
+  
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
 
         
+
+
+
+
+
+
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
   </div>
 
   
@@ -609,60 +669,119 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
 
 
 
   
   
-
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-
 
   
   
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
   
 
   

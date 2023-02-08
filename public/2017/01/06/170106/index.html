@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,45 +34,38 @@
 
 
 
-  
-  
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
   
   
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.png?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="JavaScript,算法," />
@@ -77,56 +77,66 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.0.1" />
-
-
-
-
 
 
 <meta name="description" content="背景 做为一名贫困的月光搬砖党，如果想每天加餐能够多加一块肉。那么就得靠微信红包手速抢红包，所以为了实现梦想。我给自己制定了目标，先抢够一个亿。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="车大棒浅谈微信红包随机分配猜想">
-<meta property="og:url" content="http://yoursite.com/2017/01/06/170106/index.html">
+<meta property="og:url" content="http://example.com/2017/01/06/170106/index.html">
 <meta property="og:site_name" content="CheDabang Blog">
 <meta property="og:description" content="背景 做为一名贫困的月光搬砖党，如果想每天加餐能够多加一块肉。那么就得靠微信红包手速抢红包，所以为了实现梦想。我给自己制定了目标，先抢够一个亿。">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-d9a81d2496e8a897.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-ba062f0a8ab9261d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-f8652caade268cbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-e7c8ccc4e0973ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-7dc27cd47f6a5508.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-7f0b778622e4ab9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-1069505b65f57ee4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-39295bef08c8d98d.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-a9b3dfc703cf20b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-0fea5cbb9b2b9b08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-24T09:13:37.906Z">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/images/170106_0.webp">
+<meta property="og:image" content="http://example.com/images/170106_1.webp">
+<meta property="og:image" content="http://example.com/images/170106_2.png">
+<meta property="og:image" content="http://example.com/images/170106_3.png">
+<meta property="og:image" content="http://example.com/images/170106_4.webp">
+<meta property="og:image" content="http://example.com/images/170106_5.png">
+<meta property="og:image" content="http://example.com/images/170106_6.webp">
+<meta property="og:image" content="http://example.com/images/170106_7.webp">
+<meta property="article:published_time" content="2017-01-06T09:16:26.000Z">
+<meta property="article:modified_time" content="2022-02-15T02:49:51.679Z">
+<meta property="article:author" content="CheDabang">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="车大棒浅谈微信红包随机分配猜想">
-<meta name="twitter:description" content="背景 做为一名贫困的月光搬砖党，如果想每天加餐能够多加一块肉。那么就得靠微信红包手速抢红包，所以为了实现梦想。我给自己制定了目标，先抢够一个亿。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2064035-d9a81d2496e8a897.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://example.com/images/170106_0.webp">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> 车大棒浅谈微信红包随机分配猜想 | CheDabang Blog </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://example.com/2017/01/06/170106/"/>
+
+
+
+
+
+  <title>车大棒浅谈微信红包随机分配猜想 | CheDabang Blog</title>
   
 
 
@@ -136,36 +146,42 @@
 
 
 
+<meta name="generator" content="Hexo 6.0.0"></head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">CheDabang Blog</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CheDabang Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -176,7 +192,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -185,18 +201,8 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -205,22 +211,32 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
@@ -231,6 +247,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -245,57 +263,75 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/01/06/170106/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="车大棒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CheDabang Blog">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                车大棒浅谈微信红包随机分配猜想
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">车大棒浅谈微信红包随机分配猜想</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-06T17:16:26+08:00" content="2017-01-06">
-              2017-01-06
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-06T17:16:26+08:00">
+                2017-01-06
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端浅谈/" itemprop="url" rel="index">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E6%B5%85%E8%B0%88/" itemprop="url" rel="index">
                     <span itemprop="name">前端浅谈</span>
                   </a>
                 </span>
 
                 
                 
-
               
             </span>
           
@@ -305,16 +341,21 @@
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -322,61 +363,62 @@
 
       
         <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p> 做为一名贫困的月光搬砖党，如果想每天加餐能够多加一块肉。那么就得靠微信红包手速抢红包，所以为了实现梦想。我给自己制定了目标，先抢够一个亿。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-d9a81d2496e8a897.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="先抢够一个亿"><br><a id="more"></a></p>
-<p>可是这几天微信红包手气，完全都不忍直视呀。每次都手气最差，就连自己的发的红包自己抢，也还是抢几分钱。阿西吧！早餐包子钱都吃不上了。<br><img src="http://upload-images.jianshu.io/upload_images/2064035-ba062f0a8ab9261d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="我的包子呢？"></p>
+<p><img src="/images/170106_0.webp" alt="先抢够一个亿"></p>
+<span id="more"></span>
+
+<p>可是这几天微信红包手气，完全都不忍直视呀。每次都手气最差，就连自己的发的红包自己抢，也还是抢几分钱。阿西吧！早餐包子钱都吃不上了。<br><img src="/images/170106_1.webp" alt="我的包子呢？"></p>
 <h1 id="微信红包顺序拆分猜想"><a href="#微信红包顺序拆分猜想" class="headerlink" title="微信红包顺序拆分猜想"></a>微信红包顺序拆分猜想</h1><p>所以当我看见隔壁老王正在吃着热腾腾的包子加豆浆，只能默默端起了水杯去饮水机旁边打水喝，打算用水安抚我抗议的胃。</p>
 <p>之后一边静静灌水喝，一边开始思索起来。为什么老王运气好，总是能够得到最佳手气。而我却总是几分几分，这不科学。难得微信红包有什么奥秘？难得拆分红包的先后顺序会影响最佳手气的概率？</p>
 <p>于是本人赶紧上网搜了搜，原来早在微信红包出来的时候。就有人已经对于微信红包的随机分配算法进行探讨，并给出了相应回复。（看看大佬们都关注点总是和我们这些弱渣关注点不一样，(ˇˍˇ) 向大佬们低头。）</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-f8652caade268cbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片来自知乎大神回复"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-e7c8ccc4e0973ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="知乎大神30人抢500测试2000次截图"></p>
+<p><img src="/images/170106_2.png" alt="图片来自知乎大神回复"></p>
+<p><img src="/images/170106_3.png" alt="知乎大神30人抢500测试2000次截图"></p>
 <p>可是很块我就发现，这个仅供参考的代码就有一点问题。根据图中的代码</p>
-<pre><code>double min = 0.01；
-double max = _leftMoneyPackage.remainMoney / _leftMoneyPackage.remainSize * 2;
-</code></pre><p>通过知乎大神上面的提供的代码可以看出，微信发放的红包中。单个红包最小金额为0.01元，而最大金额则为  剩余的金额 / 剩余未拆开红包的数量  之后再乘以2</p>
-<p>即我发一个5毛钱的红包，分5人发送。那么其中手气最佳的最大金额应该是 5 / 5 * 2  =  2毛。<br>对此我在微信群，发了一个5毛红包做了测试：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-7dc27cd47f6a5508.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="心疼自己的手气"></p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> min = <span class="number">0.01</span>；</span><br><span class="line"><span class="type">double</span> max = _leftMoneyPackage.remainMoney / _leftMoneyPackage.remainSize * <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>通过知乎大神上面的提供的代码可以看出，微信发放的红包中。单个红包最小金额为0.01元，而最大金额则为  剩余的金额 &#x2F; 剩余未拆开红包的数量  之后再乘以2</p>
+<p>即我发一个5毛钱的红包，分5人发送。那么其中手气最佳的最大金额应该是 5 &#x2F; 5 * 2  &#x3D;  2毛。<br>对此我在微信群，发了一个5毛红包做了测试：</p>
+<p><img src="/images/170106_4.webp" alt="心疼自己的手气"></p>
 <p>这里老王在专心吃的他的包子，因此没有去抢我发的红包。可是这样我还是一样拿不到手气最佳，心疼我这个手气……</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-7f0b778622e4ab9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这都是什么手气呀！"></p>
-<p>嗯额，不扯远了。通过这个手气最佳的金额来看 0.34 &gt; 0.5/5 * 2  ，因此从这个红包的金额来看，现在微信单个红包最大金额不满足知乎提供的公式。（在当时是不是满足，我就不清楚了，毕竟是好几年的公式了！）</p>
+<p>嗯额，不扯远了。通过这个手气最佳的金额来看 0.34 &gt; 0.5&#x2F;5 * 2  ，因此从这个红包的金额来看，现在微信单个红包最大金额不满足知乎提供的公式。（在当时是不是满足，我就不清楚了，毕竟是好几年的公式了！）</p>
 <p>但是后续在多个群里测试多个5毛红包之后，发现这个关于第一个领红包、以及最后一个领红包先后顺序领红包，获得手气最佳的概率是一样的。</p>
 <blockquote>
 <p>只能说跟欧洲人和非洲人有关，看来这几天得多到老王的位置吸吸欧气 (￣_,￣ )</p>
 </blockquote>
 <h1 id="其他的随机算法实现"><a href="#其他的随机算法实现" class="headerlink" title="其他的随机算法实现"></a>其他的随机算法实现</h1><p>  在通过<strong>惨痛</strong>红包测试之后，证明现在当初那个公式可能有误。但是肿么不能这样就结束了，总得搞点事情出来呀！（于是乎，翻阅半天的帖子之后，便回到当初知乎题主提问的问题上，尝试解决他的问题。~(～￣▽￣)～）</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-1069505b65f57ee4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="知乎题主的问题"></p>
+<p><img src="/images/170106_5.png" alt="知乎题主的问题"></p>
 <h1 id="回头解决知乎题目猜想："><a href="#回头解决知乎题目猜想：" class="headerlink" title="回头解决知乎题目猜想："></a>回头解决知乎题目猜想：</h1><p>尝试了一下，题主的问题。我好像能够解决呢！！</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-39295bef08c8d98d.gif?imageMogr2/auto-orient/strip" alt="不明真相的吃瓜群众"></p>
 <p>说实话，还是觉得题主的这个随机分配想法还是很妙的，要是我就想不出来这种随机分配金额的办法来。也要向提问题主低头(* ￣︿￣)！</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">weixin1</span>(<span class="params">money, num</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> arr1 = [];</div><div class="line">	<span class="keyword">var</span> price = <span class="number">0</span>;</div><div class="line">	<span class="keyword">var</span> ha = <span class="number">0</span>;</div><div class="line">	<span class="keyword">var</span> random = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">		<span class="keyword">if</span>(i == num - <span class="number">1</span>) &#123;</div><div class="line">			arr1[i] = <span class="built_in">parseFloat</span>(money.toFixed(<span class="number">2</span>));</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		arr1[i] = <span class="built_in">parseInt</span>(<span class="built_in">parseInt</span>(money / (num - i) * <span class="number">100</span>) / <span class="number">100</span> * (<span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * <span class="number">100</span>) / <span class="number">100</span>) * <span class="number">100</span>) / <span class="number">100</span>;</div><div class="line">		<span class="keyword">if</span>(!arr1[i])&#123;</div><div class="line">			arr1[i] = <span class="number">0.01</span>;</div><div class="line">		&#125;</div><div class="line">		money -= arr1[i];</div><div class="line">		<span class="built_in">console</span>.log(money);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr1.length; i++) &#123;    <span class="comment">//用来检测最后的总数是否正确</span></div><div class="line">		price += arr1[i];</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">randomsort</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="built_in">Math</span>.random() &gt; <span class="number">0.5</span> ? <span class="number">-1</span> : <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	arr1.sort(randomsort);          <span class="comment">//数组重新随机排列</span></div><div class="line">	<span class="built_in">console</span>.log(arr1)</div><div class="line">	<span class="built_in">console</span>.log(price);</div><div class="line">&#125;</div><div class="line">weixin1(<span class="number">100</span>, <span class="number">5</span>);</div><div class="line">weixin1(<span class="number">0.5</span>, <span class="number">5</span>);</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-a9b3dfc703cf20b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="浏览器运行控制结果"></p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">weixin1</span>(<span class="params">money, num</span>) &#123;</span><br><span class="line">	<span class="keyword">var</span> arr1 = [];</span><br><span class="line">	<span class="keyword">var</span> price = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">var</span> ha = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">var</span> <span class="built_in">random</span> = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(i == num - <span class="number">1</span>) &#123;</span><br><span class="line">			arr1[i] = parseFloat(money.toFixed(<span class="number">2</span>));</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		arr1[i] = parseInt(parseInt(money / (num - i) * <span class="number">100</span>) / <span class="number">100</span> * (parseInt(Math.<span class="built_in">random</span>() * <span class="number">100</span>) / <span class="number">100</span>) * <span class="number">100</span>) / <span class="number">100</span>;</span><br><span class="line">		<span class="keyword">if</span>(!arr1[i])&#123;</span><br><span class="line">			arr1[i] = <span class="number">0.01</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		money -= arr1[i];</span><br><span class="line">		<span class="built_in">console</span>.<span class="built_in">log</span>(money);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr1.<span class="built_in">length</span>; i++) &#123;    <span class="comment">//用来检测最后的总数是否正确</span></span><br><span class="line">		price += arr1[i];</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">randomsort</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> Math.<span class="built_in">random</span>() &gt; <span class="number">0.5</span> ? <span class="number">-1</span> : <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	arr1.<span class="built_in">sort</span>(randomsort);          <span class="comment">//数组重新随机排列</span></span><br><span class="line">	<span class="built_in">console</span>.<span class="built_in">log</span>(arr1)</span><br><span class="line">	<span class="built_in">console</span>.<span class="built_in">log</span>(price);</span><br><span class="line">&#125;</span><br><span class="line">weixin1(<span class="number">100</span>, <span class="number">5</span>);</span><br><span class="line">weixin1(<span class="number">0.5</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/170106_6.webp" alt="浏览器运行控制结果"></p>
 <p>以上就是对微信红包随机分配猜想的胡扯篇，欢迎各位大佬们指导并给出相应的意见。（当然红包打赏我就更好了(￣︶￣)，哎呦！我又想起了我那么多可怜测试红包。）</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-0fea5cbb9b2b9b08.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="向各位大佬低头"></p>
+<p><img src="/images/170106_7.webp" alt="向各位大佬低头"></p>
 
       
     </div>
+    
+    
+    
 
-    <div>
-      
-        
-      
-    </div>
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
-            <a href="/tags/算法/" rel="tag">#算法</a>
+            <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
           
         </div>
+      
+
+      
+      
       
 
       
@@ -388,6 +430,8 @@ double max = _leftMoneyPackage.remainMoney / _leftMoneyPackage.remainSize * 2;
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -402,6 +446,10 @@ double max = _leftMoneyPackage.remainMoney / _leftMoneyPackage.remainSize * 2;
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -417,9 +465,9 @@ double max = _leftMoneyPackage.remainMoney / _leftMoneyPackage.remainSize * 2;
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
+
+  
+
 
 
         </div>
@@ -435,102 +483,104 @@ double max = _leftMoneyPackage.remainMoney / _leftMoneyPackage.remainSize * 2;
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            作者介绍
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="车大棒" />
-          <p class="site-author-name" itemprop="name">车大棒</p>
-          <p class="site-description motion-element" itemprop="description">吾虽浪迹天涯，却未迷失本心</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="车大棒" />
+            
+              <p class="site-author-name" itemprop="name">车大棒</p>
+              <p class="site-description motion-element" itemprop="description">吾虽浪迹天涯，却未迷失本心</p>
           </div>
 
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
+          <nav class="site-state motion-element">
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
             
-              <span class="links-of-author-item">
-                <a href="https://github.com/CheDabang" target="_blank" title="GItHub">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  GItHub
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
-              </span>
+              </div>
             
-              <span class="links-of-author-item">
-                <a href="http://www.jianshu.com/u/025df949ff39" target="_blank" title="简书">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  简书
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
                 </a>
-              </span>
+              </div>
             
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
+
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-
-        
-        
-
-        
-        
-
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微信红包顺序拆分猜想"><span class="nav-number">2.</span> <span class="nav-text">微信红包顺序拆分猜想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他的随机算法实现"><span class="nav-number">3.</span> <span class="nav-text">其他的随机算法实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回头解决知乎题目猜想："><span class="nav-number">4.</span> <span class="nav-text">回头解决知乎题目猜想：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E7%BA%A2%E5%8C%85%E9%A1%BA%E5%BA%8F%E6%8B%86%E5%88%86%E7%8C%9C%E6%83%B3"><span class="nav-number">2.</span> <span class="nav-text">微信红包顺序拆分猜想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%9A%84%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">其他的随机算法实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E5%A4%B4%E8%A7%A3%E5%86%B3%E7%9F%A5%E4%B9%8E%E9%A2%98%E7%9B%AE%E7%8C%9C%E6%83%B3%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">回头解决知乎题目猜想：</span></a></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -543,36 +593,50 @@ double max = _leftMoneyPackage.remainMoney / _leftMoneyPackage.remainSize * 2;
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">CheDabang</span>
+
+  
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
 
         
+
+
+
+
+
+
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
   </div>
 
   
@@ -595,60 +659,119 @@ double max = _leftMoneyPackage.remainMoney / _leftMoneyPackage.remainSize * 2;
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
 
 
 
   
   
-
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-
 
   
   
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
   
 
   

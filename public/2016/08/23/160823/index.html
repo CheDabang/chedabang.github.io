@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,48 +34,41 @@
 
 
 
-  
-  
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
   
   
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,闭包," />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.png?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="闭包,JavaScript," />
 
 
 
@@ -77,60 +77,60 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.0.1" />
 
 
-
-
-
-
-<meta name="description" content="前言
-闭包就是指一个有权访问另外一个函数作用域中的变量的函数。–《JavaScript高级程序第三版》
-
-本人对于闭包初次的认识就来自《高三》，首先仅仅通过“有权”’两个字我们便可以进一步推断出。在正常情况下，一个函数是“无权”访问另外一个函数的作用域中的变量。
-什么是变量因此在浅谈闭包的时候，回顾一下Javascript特殊的变量作用域。变量的作用域无非就是两种：全局变量和局部变量。下面通过几个">
+<meta name="description" content="前言 闭包就是指一个有权访问另外一个函数作用域中的变量的函数。–《JavaScript高级程序第三版》  本人对于闭包初次的认识就来自《高三》，首先仅仅通过“有权”’两个字我们便可以进一步推断出。在正常情况下，一个函数是“无权”访问另外一个函数的作用域中的变量。 什么是变量因此在浅谈闭包的时候，回顾一下Javascript特殊的变量作用域。变量的作用域无非就是两种：全局变量和局部变量。下面通过几个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈JavaScript闭包心得">
-<meta property="og:url" content="http://yoursite.com/2016/08/23/160823/index.html">
+<meta property="og:url" content="http://example.com/2016/08/23/160823/index.html">
 <meta property="og:site_name" content="CheDabang Blog">
-<meta property="og:description" content="前言
-闭包就是指一个有权访问另外一个函数作用域中的变量的函数。–《JavaScript高级程序第三版》
-
-本人对于闭包初次的认识就来自《高三》，首先仅仅通过“有权”’两个字我们便可以进一步推断出。在正常情况下，一个函数是“无权”访问另外一个函数的作用域中的变量。
-什么是变量因此在浅谈闭包的时候，回顾一下Javascript特殊的变量作用域。变量的作用域无非就是两种：全局变量和局部变量。下面通过几个">
+<meta property="og:description" content="前言 闭包就是指一个有权访问另外一个函数作用域中的变量的函数。–《JavaScript高级程序第三版》  本人对于闭包初次的认识就来自《高三》，首先仅仅通过“有权”’两个字我们便可以进一步推断出。在正常情况下，一个函数是“无权”访问另外一个函数的作用域中的变量。 什么是变量因此在浅谈闭包的时候，回顾一下Javascript特殊的变量作用域。变量的作用域无非就是两种：全局变量和局部变量。下面通过几个">
+<meta property="og:locale">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-37b67d2deb8d4b51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2064035-cda6ca619b271841.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-26T08:53:28.914Z">
+<meta property="article:published_time" content="2016-08-22T16:45:00.000Z">
+<meta property="article:modified_time" content="2022-01-25T04:24:35.299Z">
+<meta property="article:author" content="CheDabang">
+<meta property="article:tag" content="闭包">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅谈JavaScript闭包心得">
-<meta name="twitter:description" content="前言
-闭包就是指一个有权访问另外一个函数作用域中的变量的函数。–《JavaScript高级程序第三版》
-
-本人对于闭包初次的认识就来自《高三》，首先仅仅通过“有权”’两个字我们便可以进一步推断出。在正常情况下，一个函数是“无权”访问另外一个函数的作用域中的变量。
-什么是变量因此在浅谈闭包的时候，回顾一下Javascript特殊的变量作用域。变量的作用域无非就是两种：全局变量和局部变量。下面通过几个">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2064035-37b67d2deb8d4b51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> 浅谈JavaScript闭包心得 | CheDabang Blog </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://example.com/2016/08/23/160823/"/>
+
+
+
+
+
+  <title>浅谈JavaScript闭包心得 | CheDabang Blog</title>
   
 
 
@@ -140,36 +140,42 @@
 
 
 
+<meta name="generator" content="Hexo 6.0.0"></head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">CheDabang Blog</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CheDabang Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -180,7 +186,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -189,18 +195,8 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -209,22 +205,32 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
@@ -235,6 +241,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -249,57 +257,75 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2016/08/23/160823/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="车大棒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CheDabang Blog">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                浅谈JavaScript闭包心得
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">浅谈JavaScript闭包心得</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-23T00:45:00+08:00" content="2016-08-23">
-              2016-08-23
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-23T00:45:00+08:00">
+                2016-08-23
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端浅谈/" itemprop="url" rel="index">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E6%B5%85%E8%B0%88/" itemprop="url" rel="index">
                     <span itemprop="name">前端浅谈</span>
                   </a>
                 </span>
 
                 
                 
-
               
             </span>
           
@@ -309,16 +335,21 @@
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -332,67 +363,75 @@
 <h1 id="什么是变量"><a href="#什么是变量" class="headerlink" title="什么是变量"></a>什么是变量</h1><p>因此在浅谈<strong>闭包</strong>的时候，回顾一下Javascript特殊的变量作用域。<br>变量的作用域无非就是两种：<strong>全局变量</strong>和<strong>局部变量</strong>。下面通过几个简单的例子，让我们展示一下<strong>全局变量</strong>和<strong>局部变量</strong>的区别。</p>
 <h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><pre><code> var str = &quot;hello chedabang&quot;;
 console.log(str);
-function test(){
+function test()&#123;
     console.log(str);
-}
+&#125;
 test();
-</code></pre><p>控制的台的结果：<br><code>hello chedabang</code><br><code>hello chedabang</code><br>说明这个变量str 可以在函数外面直接被访问到，也能够被函数访问到这个变量。既然谁都有权访问到这个变量，那么就说明在函数体外面声明的变量就是<strong>全局变量</strong>。</p>
-<h2 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h2><pre><code>function test1(){
+</code></pre>
+<p>控制的台的结果：<br><code>hello chedabang</code><br><code>hello chedabang</code><br>说明这个变量str 可以在函数外面直接被访问到，也能够被函数访问到这个变量。既然谁都有权访问到这个变量，那么就说明在函数体外面声明的变量就是<strong>全局变量</strong>。</p>
+<h2 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h2><pre><code>function test1()&#123;
     var str1 = &quot;hello chedabang&quot;;
     console.log(str);
-}
+&#125;
 test1();
-</code></pre><p>控制台输出结果：<br><code>hello chedabang</code><br>再来一组代码</p>
-<pre><code>function test1(){
+</code></pre>
+<p>控制台输出结果：<br><code>hello chedabang</code><br>再来一组代码</p>
+<pre><code>function test1()&#123;
     var str1 = &quot;hello chedabang&quot;;
-}
+&#125;
 console.log(str1);
-</code></pre><p>控制台输出结果：<br><code>Uncaught ReferenceError: str1 is not defined</code><br>再来一组代码<br>说明这个变量str1只能够被自己所在的函数访问使用，而在函数外面调用时由于无权限访问函数test1()的变量，因此控制台报错“变量未定义”。所以我们可以推断出在函数内部声明的变量，就属于<strong>局部变量</strong>。<br>有一点需要注意，函数内部如果不用var 来声明变量，那么这个变量就不是<strong>局部变量</strong>，而是一个<strong>全局变量</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	 str2 = <span class="string">"hello chedabang"</span>;</div><div class="line">	<span class="built_in">console</span>.log(str2);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(str2);</div></pre></td></tr></table></figure>
+</code></pre>
+<p>控制台输出结果：<br><code>Uncaught ReferenceError: str1 is not defined</code><br>再来一组代码<br>说明这个变量str1只能够被自己所在的函数访问使用，而在函数外面调用时由于无权限访问函数test1()的变量，因此控制台报错“变量未定义”。所以我们可以推断出在函数内部声明的变量，就属于<strong>局部变量</strong>。<br>有一点需要注意，函数内部如果不用var 来声明变量，那么这个变量就不是<strong>局部变量</strong>，而是一个<strong>全局变量</strong></p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">function</span> <span class="title function_">test2</span>(<span class="params"></span>)&#123;</span><br><span class="line">	 str2 = <span class="string">&quot;hello chedabang&quot;</span>;</span><br><span class="line">	<span class="built_in">console</span>.<span class="built_in">log</span>(str2);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.<span class="built_in">log</span>(str2);</span><br></pre></td></tr></table></figure>
+
 <p>控制台输出结果：<br><code>hello chedabang</code><br><code>hellow chedabang</code></p>
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>1、函数内部可以直接读取<strong>全局变量</strong><br>2、函数外部不可以直接读取函数内部的<strong>局部变量</strong> </p>
 <h1 id="思考点"><a href="#思考点" class="headerlink" title="思考点"></a>思考点</h1><h2 id="如何从外部访问函数内部的局部变量"><a href="#如何从外部访问函数内部的局部变量" class="headerlink" title="如何从外部访问函数内部的局部变量"></a>如何从外部访问函数内部的局部变量</h2><p>出于种种原因，我们有时候需要得到函数内的局部变量。但是，前面已经说过了，正常情况下，这是无权访问的。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">zhugeliang</span>(<span class="params"></span>)</span>&#123;                     <span class="comment">//诸葛亮</span></div><div class="line">	<span class="keyword">var</span> str3 = <span class="string">"蜀国"</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">adou</span>(<span class="params"></span>)</span>&#123;   </div><div class="line">		<span class="built_in">console</span>.log(str3);        <span class="comment">//阿斗</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> simayi = zhugeliang();     </div><div class="line">    </div><div class="line">       simayi();   <span class="comment">//控制台报错        司马懿攻不下蜀国</span></div></pre></td></tr></table></figure>
-<p>通过此代码可以看到,由于函数诸葛亮是在自己函数里面创建的局部变量<strong>“蜀国”</strong>;因此司马懿想获取到 var str3 = <strong>“蜀国”</strong>;那就肯定会报错，无功而返。<br>读过三国的人应该都知道，诸葛亮虽然被人称为卧龙。但是面对阿斗这样始终扶不起庸才，也只能回天乏术，蜀国最终还是没能够一统三国，反倒是阿斗落下一个乐不思蜀的笑柄。</p>
-<h2 id="simayi（司马懿）获取内部变量“蜀国”的代码"><a href="#simayi（司马懿）获取内部变量“蜀国”的代码" class="headerlink" title="simayi（司马懿）获取内部变量“蜀国”的代码"></a>simayi（司马懿）获取内部变量“蜀国”的代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">zhugeliang</span>(<span class="params"></span>)</span>&#123;                      <span class="comment">//诸葛亮</span></div><div class="line">	<span class="keyword">var</span> str3 = <span class="string">"蜀国"</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">adou</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(str3);                   <span class="comment">//   阿斗</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> adou;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> simayi = zhugeliang();</div><div class="line">   simayi();   <span class="comment">//控制台输出 “蜀国”                 司马懿拿到蜀国</span></div></pre></td></tr></table></figure>
-<p><strong>思路分析：</strong><br> 函数“阿斗”被包裹在函数“诸葛亮”内部，这时“诸葛亮”内部的所有局部变量，对“阿斗”都是可见的。但是反过来就不行，“阿斗”内部的局部变量，对“诸葛亮”是不可见的。这就是Javascript语言特有的<strong>“链式作用域”结构（chain scope）</strong>，子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。<br>因此既然“阿斗”可以读取“诸葛亮”中的局部变量，那么只要把“阿斗作为返回值，就可以在”诸葛亮“外部读取它的内部变量“蜀国”。</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">function</span> <span class="title function_">zhugeliang</span>(<span class="params"></span>)&#123;                     <span class="comment">//诸葛亮</span></span><br><span class="line">	<span class="keyword">var</span> str3 = <span class="string">&quot;蜀国&quot;</span>;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">adou</span>(<span class="params"></span>)&#123;   </span><br><span class="line">		<span class="built_in">console</span>.<span class="built_in">log</span>(str3);        <span class="comment">//阿斗</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> simayi = zhugeliang();     </span><br><span class="line">    </span><br><span class="line">       simayi();   <span class="comment">//控制台报错        司马懿攻不下蜀国</span></span><br></pre></td></tr></table></figure>
+
+<p>通过此代码可以看到,由于函数诸葛亮是在自己函数里面创建的局部变量**”蜀国”**;因此司马懿想获取到 var str3 &#x3D; <strong>“蜀国”</strong>;那就肯定会报错，无功而返。<br>读过三国的人应该都知道，诸葛亮虽然被人称为卧龙。但是面对阿斗这样始终扶不起庸才，也只能回天乏术，蜀国最终还是没能够一统三国，反倒是阿斗落下一个乐不思蜀的笑柄。</p>
+<h2 id="simayi（司马懿）获取内部变量“蜀国”的代码"><a href="#simayi（司马懿）获取内部变量“蜀国”的代码" class="headerlink" title="simayi（司马懿）获取内部变量“蜀国”的代码"></a>simayi（司马懿）获取内部变量“蜀国”的代码</h2><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">function</span> <span class="title function_">zhugeliang</span>(<span class="params"></span>)&#123;                      <span class="comment">//诸葛亮</span></span><br><span class="line">	<span class="keyword">var</span> str3 = <span class="string">&quot;蜀国&quot;</span>;</span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">adou</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="built_in">console</span>.<span class="built_in">log</span>(str3);                   <span class="comment">//   阿斗</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> adou;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> simayi = zhugeliang();</span><br><span class="line">   simayi();   <span class="comment">//控制台输出 “蜀国”                 司马懿拿到蜀国</span></span><br></pre></td></tr></table></figure>
+
+
+<p><strong>思路分析：</strong><br> 函数“阿斗”被包裹在函数“诸葛亮”内部，这时“诸葛亮”内部的所有局部变量，对“阿斗”都是可见的。但是反过来就不行，“阿斗”内部的局部变量，对“诸葛亮”是不可见的。这就是Javascript语言特有的**”链式作用域”结构（chain scope）**，子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。<br>因此既然“阿斗”可以读取“诸葛亮”中的局部变量，那么只要把“阿斗作为返回值，就可以在”诸葛亮“外部读取它的内部变量“蜀国”。</p>
 <h1 id="闭包的简单概念"><a href="#闭包的简单概念" class="headerlink" title="闭包的简单概念"></a>闭包的简单概念</h1><p>上一节代码中的阿斗函数，就是闭包。<br>以前上网查各种专业文献上的”闭包”（closure）定义非常抽象，很难看懂。<br>因此我个人的理解是，<strong>闭包就是能够读取其他函数内部变量的函数。</strong><br>由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。<br>所以在本质上，<strong>闭包就是将函数内部和函数外部连接在一起，而修建的秘道。</strong></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2064035-37b67d2deb8d4b51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="闭包图片.png"></p>
 <p><strong>千里之堤溃于蚁穴，函数堡垒塌于闭包。</strong></p>
 <h1 id="闭包的用途"><a href="#闭包的用途" class="headerlink" title="闭包的用途"></a>闭包的用途</h1><p>闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。<br>怎么来理解这句话呢？请看下面的代码。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">var</span> n = <span class="number">999</span>;</div><div class="line">nAdd = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;n += <span class="number">1</span>&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(n);</div><div class="line">    &#125;</div><div class="line"><span class="keyword">return</span> f2;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">var</span> result=f1();</div><div class="line">   result(); <span class="comment">// 999</span></div><div class="line">   nAdd();</div><div class="line">   result(); <span class="comment">// 1000</span></div><div class="line">    <span class="comment">//小结：没有引用就会被销毁。</span></div></pre></td></tr></table></figure>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">function</span> <span class="title function_">f1</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">var</span> n = <span class="number">999</span>;</span><br><span class="line">nAdd = <span class="keyword">function</span>(<span class="params"></span>)&#123;n += <span class="number">1</span>&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f2</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="built_in">console</span>.<span class="built_in">log</span>(n);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">return</span> f2;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">var</span> result=f1();</span><br><span class="line">   result(); <span class="comment">// 999</span></span><br><span class="line">   nAdd();</span><br><span class="line">   result(); <span class="comment">// 1000</span></span><br><span class="line">    <span class="comment">//小结：没有引用就会被销毁。</span></span><br></pre></td></tr></table></figure>
+
 <p>在这段代码中，result实际上就是闭包f2函数。它一共运行了两次，第一次的值是999，第二次的值是1000。这证明了，函数f1中的局部变量n一直保存在内存中，并没有在f1调用后被自动清除。</p>
 <p>为什么会这样呢？原因就在于f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。</p>
-<p>这段代码中另一个值得注意的地方，就是”nAdd=function(){n+=1}”这一行，首先在nAdd前面没有使用var关键字，因此nAdd是一个全局变量，而不是局部变量。其次，nAdd的值是一个匿名函数（anonymous function），而这个匿名函数本身也是一个闭包，所以nAdd相当于是一个setter，可以在函数外部对函数内部的局部变量进行操作。</p>
+<p>这段代码中另一个值得注意的地方，就是”nAdd&#x3D;function(){n+&#x3D;1}”这一行，首先在nAdd前面没有使用var关键字，因此nAdd是一个全局变量，而不是局部变量。其次，nAdd的值是一个匿名函数（anonymous function），而这个匿名函数本身也是一个闭包，所以nAdd相当于是一个setter，可以在函数外部对函数内部的局部变量进行操作。</p>
 <h1 id="使用闭包的注意点"><a href="#使用闭包的注意点" class="headerlink" title="使用闭包的注意点"></a>使用闭包的注意点</h1><p>1、由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>2、闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
 <p>以上就是本人对于<strong>函数闭包</strong>的认识，不足的望还请赐教。<br>PS：另外文中借鉴三国案例，只是为了方便解释案例调侃而举，如有冒犯三国迷的看法，还请见谅。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2064035-cda6ca619b271841.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2064035-cda6ca619b271841.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 
       
     </div>
+    
+    
+    
 
-    <div>
-      
-        
-      
-    </div>
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/%E9%97%AD%E5%8C%85/" rel="tag"># 闭包</a>
           
-            <a href="/tags/闭包/" rel="tag">#闭包</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
+      
+
+      
+      
       
 
       
@@ -404,6 +443,8 @@ console.log(str1);
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -418,6 +459,10 @@ console.log(str1);
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -433,9 +478,9 @@ console.log(str1);
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
+
+  
+
 
 
         </div>
@@ -451,102 +496,104 @@ console.log(str1);
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            作者介绍
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="车大棒" />
-          <p class="site-author-name" itemprop="name">车大棒</p>
-          <p class="site-description motion-element" itemprop="description">吾虽浪迹天涯，却未迷失本心</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="车大棒" />
+            
+              <p class="site-author-name" itemprop="name">车大棒</p>
+              <p class="site-description motion-element" itemprop="description">吾虽浪迹天涯，却未迷失本心</p>
           </div>
 
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
+          <nav class="site-state motion-element">
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
             
-              <span class="links-of-author-item">
-                <a href="https://github.com/CheDabang" target="_blank" title="GItHub">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  GItHub
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
-              </span>
+              </div>
             
-              <span class="links-of-author-item">
-                <a href="http://www.jianshu.com/u/025df949ff39" target="_blank" title="简书">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  简书
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
                 </a>
-              </span>
+              </div>
             
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
+
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-
-        
-        
-
-        
-        
-
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是变量"><span class="nav-number">2.</span> <span class="nav-text">什么是变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局变量"><span class="nav-number">2.1.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部变量"><span class="nav-number">2.2.</span> <span class="nav-text">局部变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思考点"><span class="nav-number">4.</span> <span class="nav-text">思考点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何从外部访问函数内部的局部变量"><span class="nav-number">4.1.</span> <span class="nav-text">如何从外部访问函数内部的局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#simayi（司马懿）获取内部变量“蜀国”的代码"><span class="nav-number">4.2.</span> <span class="nav-text">simayi（司马懿）获取内部变量“蜀国”的代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包的简单概念"><span class="nav-number">5.</span> <span class="nav-text">闭包的简单概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包的用途"><span class="nav-number">6.</span> <span class="nav-text">闭包的用途</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用闭包的注意点"><span class="nav-number">7.</span> <span class="nav-text">使用闭包的注意点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%98%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">什么是变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="nav-number">2.1.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">2.2.</span> <span class="nav-text">局部变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E7%82%B9"><span class="nav-number">4.</span> <span class="nav-text">思考点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BB%8E%E5%A4%96%E9%83%A8%E8%AE%BF%E9%97%AE%E5%87%BD%E6%95%B0%E5%86%85%E9%83%A8%E7%9A%84%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">4.1.</span> <span class="nav-text">如何从外部访问函数内部的局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#simayi%EF%BC%88%E5%8F%B8%E9%A9%AC%E6%87%BF%EF%BC%89%E8%8E%B7%E5%8F%96%E5%86%85%E9%83%A8%E5%8F%98%E9%87%8F%E2%80%9C%E8%9C%80%E5%9B%BD%E2%80%9D%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">4.2.</span> <span class="nav-text">simayi（司马懿）获取内部变量“蜀国”的代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E7%AE%80%E5%8D%95%E6%A6%82%E5%BF%B5"><span class="nav-number">5.</span> <span class="nav-text">闭包的简单概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E7%94%A8%E9%80%94"><span class="nav-number">6.</span> <span class="nav-text">闭包的用途</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%97%AD%E5%8C%85%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number">7.</span> <span class="nav-text">使用闭包的注意点</span></a></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -559,36 +606,50 @@ console.log(str1);
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">CheDabang</span>
+
+  
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
 
         
+
+
+
+
+
+
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
   </div>
 
   
@@ -611,60 +672,119 @@ console.log(str1);
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
 
 
 
   
   
-
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-
 
   
   
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
   
 
   
